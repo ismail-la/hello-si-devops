@@ -1,6 +1,6 @@
 # Hello SI DevOps
 
-This project demonstrates a simple Node.js application integrated with DevOps practices, including containerization, CI/CD pipelines, and infrastructure as code.
+This project demonstrates a simple Node.js application integrated with DevOps practices, including containerization, CI/CD pipelines, and infrastructure as code
 
 ## Features
 
