@@ -25,3 +25,17 @@ grafana:
     limits:
       memory: 400Mi
       cpu: 200m
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-si-devops
+  namespace: default
+spec:
+  selector:
+    app: hello-si-devops
+  ports:
+    - protocol: TCP
+      port: 3000 # Service port
+      targetPort: 3000 # App's container port
+  type: ClusterIP # Use ClusterIP for internal communication
