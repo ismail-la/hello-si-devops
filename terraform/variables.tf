@@ -1,0 +1,1 @@
+variable "dockerhub_user" {}

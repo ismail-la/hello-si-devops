@@ -1,0 +1,23 @@
+prometheus:
+  alertmanager:
+    enabled: true
+  pushgateway:
+    enabled: true
+  server:
+    resources:
+      requests:
+        memory: 400Mi
+        cpu: 200m
+      limits:
+        memory: 800Mi
+        cpu: 400m
+
+grafana:
+  adminPassword: "admin"
+  resources:
+    requests:
+      memory: 200Mi
+      cpu: 100m
+    limits:
+      memory: 400Mi
+      cpu: 200m

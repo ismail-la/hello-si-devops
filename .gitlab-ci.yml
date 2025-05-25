@@ -1,0 +1,23 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script:
+    - echo "Building the application..."
+    - docker build -t hello-si-devops:latest .
+
+test:
+  stage: test
+  script:
+    - echo "Running tests..."
+    - npm install
+    - npm test
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying the application..."
+    - kubectl apply -f k8s/

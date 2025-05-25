@@ -1,0 +1,19 @@
+{
+  "name": "hello-si-devops",
+  "version": "1.0.0",
+  "description": "A simple Node.js application for DevOps demonstration.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^5.1.0",
+    "jest": "^29.7.0",
+    "supertest": "^7.1.0"
+  },
+  "keywords": [],
+  "type": "commonjs"
+}

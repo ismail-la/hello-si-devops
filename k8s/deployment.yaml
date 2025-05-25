@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-si-devops
+  labels:
+    app: hello-si-devops
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hello-si-devops
+  template:
+    metadata:
+      labels:
+        app: hello-si-devops
+    spec:
+      containers:
+        - name: hello-si-devops
+          image: hello-si-devops:latest
+          ports:
+            - containerPort: 3000
