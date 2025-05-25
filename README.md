@@ -15,7 +15,7 @@ This project demonstrates a simple Node.js application integrated with DevOps pr
 
 ### Prerequisites
 
-- Docker.
+- Docker
 - Node.js
 - Kubernetes cluster
 - Terraform
@@ -65,15 +65,17 @@ npm test
 
 2. Kubernetes Deployment:
    Apply Kubernetes configurations:
+
    ```bash
    kubectl apply -f k8s/
    ```
+
    Check pods and services:
 
-```bash
-kubectl get pods
-kubectl get svc
-```
+   ```bash
+   kubectl get pods
+   kubectl get svc
+   ```
 
 ### Infrastructure Setup
 
@@ -90,10 +92,30 @@ kubectl get svc
 
 ### CI/CD
 
--GitLab: On push, .gitlab-ci.yml will build, test, and deploy automatically.
--Jenkins: Use the Jenkinsfile for Jenkins-based automation.
+- **GitLab**: On push, `.gitlab-ci.yml` will build, test, and deploy automatically.
+- **Jenkins**: Use the `Jenkinsfile` for Jenkins-based automation.
+
+#### Jenkins with ngrok
+
+If you are running Jenkins locally and want to trigger builds from GitHub (webhooks), you can use [ngrok](https://ngrok.com/) to expose your Jenkins server to the internet:
+
+1. Start ngrok to forward port 8080:
+
+   ```bash
+   ngrok http 8080
+   ```
+
+2. Copy the HTTPS forwarding URL shown by ngrok (e.g., `https://xxxx-47-250-175-104.ngrok-free.app`).
+
+3. In your GitHub repository, go to **Settings > Webhooks** and set the **Payload URL** to:
+
+   ```
+   https://xxx-446-2580-175-104.ngrok-free.app/github-webhook/
+   ```
+
+4. Now, GitHub can reach your Jenkins server for webhook events, and builds will be triggered on push.
 
 ### Monitoring
 
--Prometheus and Grafana are set up via Helm values in k8s/monitoring/.
--After deployment, access Grafana to view dashboards and monitor your app.
+- Prometheus and Grafana are set up via Helm values in `k8s/monitoring/`.
+- After deployment, access Grafana to view dashboards and monitor your app.
