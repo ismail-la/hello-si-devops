@@ -142,7 +142,7 @@ If you are running Jenkins locally and want to trigger builds from GitHub (webho
   ```sh
   kubectl port-forward -n monitoring svc/monitoring-kube-prometheus-prometheus 9090:9090
   ```
-- Open [http://localhost:9090](http://localhost:9090) in your browser.
+- Open [http://localhost:9090](http://localhost:9090) in your browser
 
 #### Access Grafana
 
