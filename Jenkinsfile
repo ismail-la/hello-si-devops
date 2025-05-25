@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        // Using fixed "latest" tag as requested
+        // Using fixed "latest" tag as requested.
         DOCKER_IMAGE = "hello-si-devops:latest"
         SONAR_PROJECT_KEY = "hello-si-devops"
         EMAIL_RECIPIENTS = "lahbariismail@gmail.com"
