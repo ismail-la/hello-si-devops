@@ -11,6 +11,10 @@ prometheus:
       limits:
         memory: 800Mi
         cpu: 400m
+    extraScrapeConfigs:
+      - job_name: "nodejs-app"
+        static_configs:
+          - targets: ["hello-si-devops:3000"] # Replace with your app's service name and port
 
 grafana:
   adminPassword: "admin"
