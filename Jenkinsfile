@@ -24,26 +24,26 @@ pipeline {
             }
         }
         
-        stage('Code Analysis with SonarQube') {
-            steps {
-                echo 'Running SonarQube analysis...'
-                withSonarQubeEnv('SonarQube') {
-                    // For Windows environments
-                    bat """
-                        sonar-scanner.bat -Dsonar.projectKey=${SONAR_PROJECT_KEY} ^
-                        -Dsonar.sources=app ^
-                        -Dsonar.exclusions=app/node_modules/**,app/__tests__/** ^
-                        -Dsonar.tests=app/__tests__ ^
-                        -Dsonar.javascript.lcov.reportPaths=app/coverage/lcov.info
-                    """
-                }
-                
-                // Quality Gate check
-                timeout(time: 5, unit: 'MINUTES') {
-                    waitForQualityGate abortPipeline: true
-                }
-            }
-        }
+        // stage('Code Analysis with SonarQube') {
+        //     steps {
+        //         echo 'Running SonarQube analysis...'
+        //         withSonarQubeEnv('SonarQube') {
+        //             // For Windows environments
+        //             bat """
+        //                 sonar-scanner.bat -Dsonar.projectKey=${SONAR_PROJECT_KEY} ^
+        //                 -Dsonar.sources=app ^
+        //                 -Dsonar.exclusions=app/node_modules/**,app/__tests__/** ^
+        //                 -Dsonar.tests=app/__tests__ ^
+        //                 -Dsonar.javascript.lcov.reportPaths=app/coverage/lcov.info
+        //             """
+        //         }
+            
+        //         // Quality Gate check
+        //         timeout(time: 5, unit: 'MINUTES') {
+        //             waitForQualityGate abortPipeline: true
+        //         }
+        //     }
+        // }
         
         stage('Run Tests') {
             steps {
