@@ -12,8 +12,10 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                bat 'npm install'
-                bat 'npm test'
+                dir('app') {
+                    bat 'npm install'
+                    bat 'npm test'
+                }
             }
         }
 
