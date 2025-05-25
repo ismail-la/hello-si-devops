@@ -15,5 +15,8 @@
     "supertest": "^7.1.0"
   },
   "keywords": [],
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "prom-client": "^15.1.3"
+  }
 }
