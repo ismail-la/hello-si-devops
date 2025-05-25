@@ -15,7 +15,7 @@ This project demonstrates a simple Node.js application integrated with DevOps pr
 
 ### Prerequisites
 
-- Docker
+- Docker.
 - Node.js
 - Kubernetes cluster
 - Terraform
