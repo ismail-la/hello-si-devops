@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-si-devops
+  name: hello-si-devops-metrics # This is the name Prometheus is trying to scrape
   namespace: default
 spec:
   selector:
     app: hello-si-devops
   ports:
     - protocol: TCP
-      port: 3000 # Service port
-      targetPort: 3000 # App's container port
-  type: ClusterIP # Use ClusterIP for internal communication
+      port: 3000
+      targetPort: 3000
+  type: ClusterIP
